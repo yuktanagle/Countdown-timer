@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=PT+Sans:wght@400;700&display=swap');
+html{
+    font-size:10px;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    min-height:100vh;
+    text-align:center;
+    font-family:'Nunito',sans-serif;
+}
+button{
+    cursor:pointer;
+}
+button,input{
+    outline:none;    
+    border:none;
+}
+main{
+    position:absolute;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    padding:3rem;
+    width:50%;
+    min-height:100vh;
+    text-align:center;
+}
+.main-title{
+    font-size:5.5rem;
+    color:#FAFFFD;
+    letter-spacing:0.2rem;
+    font-weight:300;
+    margin-bottom: 3rem;
+}
+
+.button-container{
+  text-align:center;
+}
+.timer-button,.stopwatch-button{
+    width:25rem;
+    height:6rem;
+    font-size:2.4rem;
+    cursor:pointer;
+    margin:0 3rem;
+    border:0.3rem solid #0C1012;
+    background:rgb(255, 255, 255);
+    color:#0C1012;   
+   letter-spacing:0.2rem;
+}
+
+
+.timer-container{
+    width:90%;
+    margin:0 auto;
+    min-height:30vh;    
+    margin-top: 2rem;
+    font-size:3rem;
+    color:#fff;
+    padding-top:3rem;
+}
+.timer-display,.stopwatch-display{ 
+  position:relative;
+  margin:3rem auto;   
+  display:block;  
+  font-size:8rem;
+  width:100%;
+  height:10rem;
+  display: flex;
+  place-content: center;
+}
+.stopwatch-display{
+    font-size: 5rem;
+}
+.stopwatch-display input{
+    cursor:default;
+    pointer-events:none;
+}
+.stopwatch-display label{
+    padding-top: 3.5rem;
+}
+.timer-display input,.stopwatch-display input{
+    color:#fff;
+    text-align: center;
+    width:13rem;
+    height:13rem;
+    margin:0 1rem;    
+    font-size:10rem;
+    background:transparent;
+}
+.stopwatch-display input:nth-of-type(3){
+      padding-top:2rem;
+      font-size:5.5rem;
+}
+.timer-display input::selection,
+.timer-display::selection{
+    background:#ffba93;
+    color: #0C1012;
+}
+
+button#start,button#count,button#reset{
+    width:10rem;
+    height:10rem;
+    border-radius:50%;
+    margin:3rem 4rem;
+    font-size:2.3rem;
+    color:#fff;    
+    background:#FF785A;
+}
+button#start:hover,button#count:hover{
+    filter:brightness(91%);
+}
+button#count{
+    background: #00A3F5;
+}
+button#reset{
+    border:0.4rem solid #FF785A;
+    background:#fff;
+    color:#0C1012;
+}
+button#reset:hover{
+    color:#fff;    
+    background:#FF785A;
+}
+/* to remove arrows from the input  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.count-timestamps{
+    width:70%;
+    min-height:15vh;
+    margin:2rem auto;
+    display: flex;
+    flex-direction: column;
+}
+.timestamp,.countdown-ends{
+    height:8vh;
+    font-size:3rem;
+    width:100%;
+    margin:1rem;
+    color:#fff;
+    padding-top:1rem;
+    border:0.3rem solid rgba(255, 255, 255, 0.5);
+}
+
+.countdown-ends{
+    height:11vh;
+    font-size:4rem;
+}
+
+.countdown-ends p{
+    animation:grow 3s 0.2s ease-out infinite;
+}
+/* scrollbar */
+body::-webkit-scrollbar{
+    background: rgba(0,0,0,1);
+    width:1.5rem;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,1);    
+    box-shadow:inset 0.5rem 0.5rem 0.5rem rgba(255,255,255,0.4);
+    border-radius: 5rem;
+}
+/* video-background */
+.video-background,.video-overlay{
+    position:fixed;
+    top:0;
+    left:0;    
+    width:100vw;    
+    z-index:-1;
+}
+.video-background{
+    width:100vw;
+    height:auto;
+    z-index:-1;
+}
+.video-overlay{
+    height:100vh;
+    background: rgba(0,0,0,0.15);
+}
+
+.hidden{
+    display:none;
+}
+.active{
+    color:#fff;
+    background:#0C1012;
+}
+
+
+@keyframes grow{
+    0%{transform:scale(1);}
+    25%{transform:scale(1.2);}
+    50%{transform:scale(0.8);}
+    75%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+
+@media screen and (max-width:600px){
+    .video-background{
+        object-fit:cover;
+        object-position:70%;
+        height:100vh;
+        width:100vw;
+    }
+    .video-overlay{
+        display:none;
+    }
+    main{
+        width:100vw;
+        height:auto;
+    }
+    
+}

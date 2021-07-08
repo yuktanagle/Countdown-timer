@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Countdown Timer</title>
+</head>
+<body>
+    <video class="video-background" autoplay muted loop>
+        <source src="videos/Alarm Clock - 21222.mp4">
+    </video>
+    <div class="video-overlay"></div>
+    <main>
+        <h1 class="main-title">
+            Your time starts now!
+        </h1>
+        <div class="button-container">
+            <button id="timer" class="timer-button active">Timer</button>
+            <button id="stopwatch" class="stopwatch-button">Stopwatch</button>
+        </div>
+        <div class="timer-container">
+            <span class="timer-display">
+                <input type="number" min=00 max=99 value=00 id="hour" title="Enter number of hours">:
+                <input type="number" min=00 max=59 value=00 id="minutes" title="Enter number of minutes">:
+                <input type="number" min=00 max=59 value=00 id="seconds" title="Enter number of seconds">
+            </span>
+            <span class="stopwatch-display hidden">
+                
+                <input type="number" min=00 max=59 value="00" id="minutes-stopwatch" title="Enter number of minutes"><label for="minutes">m</label>
+                <input type="number" value="00" id="seconds-stopwatch"><label for="seconds">s</label>
+                <input type="number" min=00 max=99 value="00" id="hundredth-of-second">
+            </span>
+            
+            <button id="start">Start</button>
+            <button id="count" class="hidden">Count</button>
+            <button id="reset">Reset</button>    
+            <div class="countdown-ends hidden">
+                <p>Countdown Ends</p>
+            </div>
+
+        </div>               
+        <div class="count-timestamps">
+        </div>
+    </main>
+  <script src="index.js"></script>  
+</body>
+</html>
